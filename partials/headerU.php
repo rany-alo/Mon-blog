@@ -32,9 +32,10 @@
                         Categories
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class='dropdown-item' href='index.php'>Tous</a></li>
+                            <li><a class='dropdown-item' href='articles.php?id_categorie=1'>Front End</a></li>
+                            <li><a class='dropdown-item' href='articles.php?id_categorie=2'>Back End</a></li>
+                            <li><a class='dropdown-item' href='articles.php?id_categorie=3'>Frameworks</a></li>
                         </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="profile.php">Profile</a></li>

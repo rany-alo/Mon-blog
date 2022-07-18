@@ -6,9 +6,8 @@ require_once "libraries/models/Model.php";
 
 $modelUser = new Utilisateur();
 
-if (isset($_REQUEST['inscription']))  // 'inscription' le nom de bouton
+if (isset($_REQUEST['inscription']))  
 {          
-     // prendre les informations saisi par l'utilisateur est les mettre dans des variables  
    $login = strip_tags($_REQUEST['login']);
    $email = strip_tags($_REQUEST['email']);
    $password = strip_tags($_REQUEST['password']);

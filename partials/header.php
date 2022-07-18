@@ -42,10 +42,10 @@ $articles = $modelArticle->selectArticleR();
                         Categories
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink"> 
-                            <li><a class='dropdown-item' href=''>Tous</a></li>
-                            <li><a class='dropdown-item' href=''>Back End</a></li>
-                            <li><a class='dropdown-item' href=''>Front End</a></li>
-                            <li><a class='dropdown-item' href=''>Frameworks</a></li> 
+                            <li><a class='dropdown-item' href='index.php'>Tous</a></li>
+                            <li><a class='dropdown-item' href='articles.php?id_categorie=1'>Front End</a></li>
+                            <li><a class='dropdown-item' href='articles.php?id_categorie=2'>Back End</a></li>
+                            <li><a class='dropdown-item' href='articles.php?id_categorie=3'>Frameworks</a></li>
                         </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.php">Connexion</a></li>
