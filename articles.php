@@ -1,8 +1,9 @@
 <?php
 
-    include "partials/header.php";
+include "partials/header.php";
+
 $modelArticleA = new Article();
-    $id_categorie = null;
+$id_categorie = null;
 // On verifie si il y'en a un et que c'est un nombre entier.
 if (!empty($_GET['id_categorie']) && ctype_digit($_GET['id_categorie'])) {
     $id_categorie = $_GET['id_categorie'];

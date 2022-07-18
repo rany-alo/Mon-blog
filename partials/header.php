@@ -48,7 +48,7 @@ $articles = $modelArticle->selectArticleR();
                             <li><a class='dropdown-item' href='articles.php?id_categorie=3'>Frameworks</a></li>
                         </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.php">Connexion</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="connexion.php">Connexion</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="inscription.php">Inscription</a></li>
                     </ul>
                 </div>

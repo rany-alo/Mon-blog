@@ -34,10 +34,10 @@
                                 <a class="nav-link active" href="index.php">Accueil</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Connexion</a>
+                                <a class="nav-link" href="connexion.php">Connexion</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Inscription</a>
+                                <a class="nav-link" href="inscription.php">Inscription</a>
                             </li>
                         </ul>
                         <div class="small text-center text-muted fst-italic">Copyright &copy; Mon Blog 2022</div>

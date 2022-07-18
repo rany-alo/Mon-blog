@@ -2,6 +2,17 @@
 
     include "partials/header.php";
 
+$modelUser = new Utilisateur();
+$id_droits = null;
+// On verifie si il y'en a un et que c'est un nombre entier.
+if (!empty($_GET['id_droits']) && ctype_digit($_GET['id_droits'])) {
+    $id_droits = $_GET['id_droits'];
+}
+if (!$id_droits) {
+    die();
+}
+$user = $modelUser->selectUserD($id_droits);
+
 
 ?>
         <!-- Main Content-->
