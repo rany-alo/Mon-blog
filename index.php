@@ -3,6 +3,7 @@ require_once "libraries/models/Utilisateur.php";
 require_once "libraries/models/Model.php";
 require_once "libraries/models/Article.php";
 require_once "libraries/models/Categorie.php";
+
 session_name('user_login');
 session_start();
 if (isset($_SESSION['user_login'])) {
@@ -31,7 +32,7 @@ $articles = $modelArticle->selectArticleR();
 
 ?>
         <!-- Main Content-->
-        <h1 class = 'text-center'> <?php echo $user['login']; ?></h1>
+        <h1 class = 'text-center'> <?php echo "Tous les articles de mon blog"; ?></h1>
         <?php 
         foreach ($articles as $article) {
         echo "

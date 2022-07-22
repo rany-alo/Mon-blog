@@ -13,14 +13,15 @@ class Utilisateur extends Model
         return $row;
     }
     
-    public function insertuser($login, $email, $new_password):void {
-        $insert_stmt= $this->db->prepare("INSERT INTO utilisateurs ( login, password, email) VALUES
-                                            (:ulogin, :upassword, :uemail)"); 					
+    public function insertuser($login,$new_password, $email):void {
+        $insert_stmt= $this->db->prepare("INSERT INTO utilisateurs (id, login, password, email, id_droits) VALUES
+                                            ('', :ulogin, :upassword, :uemail, :id_droits)"); 					
                 
         $insert_stmt->execute(array( 	 
                                          ':ulogin'	=>$login, 
                                          ':upassword' =>$new_password, 
-                                         ':uemail'	=>$email));
+                                         ':uemail'	=>$email,
+                                        'id_droits' => 1));
     }
     
     public function updateuser($id, $login, $email, $new_password) {

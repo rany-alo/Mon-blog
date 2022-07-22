@@ -31,16 +31,16 @@ if (!empty($_GET['id_categorie']) && ctype_digit($_GET['id_categorie'])) {
 if (!$id_categorie) {
     die("Vous devez préciser un paramètre `id` dans l'URL !");
 }
-$articlesA = $modelArticle->selectArticleByC($id_categorie);
+$articlesA = $modelArticleA->selectArticleByC($id_categorie);
 
 
 
 ?>
         <!-- Main Content-->
-        <h1 class = 'text-center'> Les posts de mon blog</h1>
         <?php 
         foreach ($articlesA as $article) {
         echo "
+        <h1 class = 'text-center'>"  .$article['nom']. "</h1>
         <div class='container px-4 px-lg-5'>
             <div class='row gx-4 gx-lg-5 justify-content-center'>
                 <div class='col-md-10 col-lg-8 col-xl-7'>

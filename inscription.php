@@ -21,7 +21,7 @@ if (isset($_REQUEST['inscription']))
       {	
             $new_password = password_hash($password, PASSWORD_DEFAULT); //encrypt le mot de passe en utilisant password_hash()
         
-            $modelUser->insertuser($login, $email, $new_password);
+            $modelUser->insertuser($login, $new_password,$email );
             $registerMsg="Inscription réussie..... Veuillez cliquer sur Connexion pour Se connecter"; //execute query success message
             
       }
