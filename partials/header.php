@@ -1,13 +1,4 @@
-<?php
-require_once "libraries/models/Utilisateur.php";
-require_once "libraries/models/Model.php";
-require_once "libraries/models/Article.php";
-require_once "libraries/models/Categorie.php";
-$modelArticle = new Article();
-$articles = $modelArticle->selectArticleR();
 
-
-?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>

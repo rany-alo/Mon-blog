@@ -1,10 +1,30 @@
 <?php
-
-include "partials/header.php";
+require_once "libraries/models/Utilisateur.php";
+require_once "libraries/models/Model.php";
+require_once "libraries/models/Article.php";
+require_once "libraries/models/Categorie.php";
+session_name('user_login');
+session_start();
+if (isset($_SESSION['user_login'])) {
+    $modelUser = new Utilisateur();
+    $id = $_SESSION["user_login"];
+    $user = $modelUser->selectUserById($id);
+    if ($user['id_droits'] == 1) {
+        include "partials/headerU.php";
+    }
+    elseif ($user['id_droits'] == 42) {
+        include "partials/headerM.php";
+    }
+    elseif ($user['id_droits'] == 1337) {
+        include "partials/headerA.php";
+    }
+}
+else {
+    include "partials/header.php";
+}
 
 $modelArticleA = new Article();
 $id_categorie = null;
-// On verifie si il y'en a un et que c'est un nombre entier.
 if (!empty($_GET['id_categorie']) && ctype_digit($_GET['id_categorie'])) {
     $id_categorie = $_GET['id_categorie'];
 }
@@ -42,6 +62,22 @@ $articlesA = $modelArticle->selectArticleByC($id_categorie);
         </div>"
                     ;}
 
-include 'partials/footer.php';
+                    if (isset($_SESSION['user_login'])) {
+                        $modelUser = new Utilisateur();
+                        $id = $_SESSION["user_login"];
+                        $user = $modelUser->selectUserById($id);
+                        if ($user['id_droits'] == 1) {
+                            include "partials/footerU.php";
+                        }
+                        elseif ($user['id_droits'] == 42) {
+                            include "partials/footerM.php";
+                        }
+                        elseif ($user['id_droits'] == 1337) {
+                            include "partials/footerA.php";
+                        }
+                    }
+                    else {
+                        include "partials/footer.php";
+                    }
 ?>
        

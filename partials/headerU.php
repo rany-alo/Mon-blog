@@ -39,6 +39,7 @@
                         </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="profile.php">Profile</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="logout.php">Déconnexion</a></li>
                     </ul>
                 </div>
             </div>

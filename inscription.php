@@ -3,6 +3,8 @@ include "partials/header.php";
 require_once "libraries/utiles.php";
 require_once "libraries/models/Utilisateur.php";
 require_once "libraries/models/Model.php";
+require_once "libraries/models/Article.php";
+require_once "libraries/models/Categorie.php";
 
 $modelUser = new Utilisateur();
 

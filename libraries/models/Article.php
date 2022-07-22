@@ -25,11 +25,11 @@ class Article extends Model
         return $article;
     }
 
-    public function selectArticleByC(int $id) {
+    public function selectArticleByC(int $id_categorie) {
         $select_stmt = $this->db->prepare("SELECT * from articles join utilisateurs on 
         articles.id_utilisateur = utilisateurs.id join categories on articles.id_categorie = categories.id
-        WHERE categories.id = :id");
-        $select_stmt->execute(array(":id"=>$id));
+        WHERE categories.id = :id_categorie");
+        $select_stmt->execute(array(":id_categorie"=>$id_categorie));
         $article=$select_stmt->fetchall(PDO::FETCH_ASSOC);
         return $article;
     }

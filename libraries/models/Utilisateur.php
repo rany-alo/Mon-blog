@@ -32,9 +32,9 @@ class Utilisateur extends Model
                                          ":uemail"	=>$email));
     }
 
-    public function selectUserD(int $id_droits) {
-        $select_stmt = $this->db->prepare("SELECT * from {$this->table} WHERE id_droits=:id_droits");
-        $select_stmt->execute(array(":id_droits"=>$id_droits));
+    public function selectUserById(int $id) {
+        $select_stmt = $this->db->prepare("SELECT * from {$this->table} WHERE id=:id");
+        $select_stmt->execute(array(":id"=>$id));
         $user=$select_stmt->fetch(PDO::FETCH_ASSOC);
         return $user;
     }

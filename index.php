@@ -1,22 +1,37 @@
 <?php
-
+require_once "libraries/models/Utilisateur.php";
+require_once "libraries/models/Model.php";
+require_once "libraries/models/Article.php";
+require_once "libraries/models/Categorie.php";
+session_name('user_login');
+session_start();
+if (isset($_SESSION['user_login'])) {
+    $modelUser = new Utilisateur();
+    $id = $_SESSION["user_login"];
+    $user = $modelUser->selectUserById($id);
+    if ($user['id_droits'] == 1) {
+        include "partials/headerU.php";
+    }
+    elseif ($user['id_droits'] == 42) {
+        include "partials/headerM.php";
+    }
+    elseif ($user['id_droits'] == 1337) {
+        include "partials/headerA.php";
+    }
+}
+else {
     include "partials/header.php";
+}
 
-$modelUser = new Utilisateur();
-$id_droits = null;
-// On verifie si il y'en a un et que c'est un nombre entier.
-if (!empty($_GET['id_droits']) && ctype_digit($_GET['id_droits'])) {
-    $id_droits = $_GET['id_droits'];
-}
-if (!$id_droits) {
-    die();
-}
-$user = $modelUser->selectUserD($id_droits);
+
+
+$modelArticle = new Article();
+$articles = $modelArticle->selectArticleR();
 
 
 ?>
         <!-- Main Content-->
-        <h1 class = 'text-center'> Les posts de mon blog</h1>
+        <h1 class = 'text-center'> <?php echo $user['login']; ?></h1>
         <?php 
         foreach ($articles as $article) {
         echo "
@@ -41,6 +56,22 @@ $user = $modelUser->selectUserD($id_droits);
         </div>"
                     ;}
 
-include 'partials/footer.php';
+                    if (isset($_SESSION['user_login'])) {
+                        $modelUser = new Utilisateur();
+                        $id = $_SESSION["user_login"];
+                        $user = $modelUser->selectUserById($id);
+                        if ($user['id_droits'] == 1) {
+                            include "partials/footerU.php";
+                        }
+                        elseif ($user['id_droits'] == 42) {
+                            include "partials/footerM.php";
+                        }
+                        elseif ($user['id_droits'] == 1337) {
+                            include "partials/footerA.php";
+                        }
+                    }
+                    else {
+                        include "partials/footer.php";
+                    }
 ?>
        

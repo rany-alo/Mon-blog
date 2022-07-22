@@ -3,6 +3,8 @@ include "partials/header.php";
 require_once "libraries/utiles.php";
 require_once "libraries/models/Utilisateur.php";
 require_once "libraries/models/Model.php";
+require_once "libraries/models/Article.php";
+require_once "libraries/models/Categorie.php";
 
 $modelUser = new Utilisateur();
 session_name('user_login');
@@ -36,7 +38,7 @@ if (isset($_REQUEST['connexion']))
 					{
 						$_SESSION["user_login"] = $row["id"];
 						$loginMsg = "Connexion réussie...";	
-						header("refresh:1; index.php?id_droits= ".$row['id_droits']);				
+						header("refresh:1; index.php");				
 					}
 					else
 					{
